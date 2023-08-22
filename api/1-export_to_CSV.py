@@ -14,7 +14,9 @@ if __name__ == "__main__":
     user = response_users.json()
 
     with open(f"{user.get('id')}.csv", mode='w') as file:
-        write = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
+        write = csv.writer(file, delimiter=',',
+                           quotechar='"', quoting=csv.QUOTE_ALL)
 
         for todo in todos:
-            write.writerow([user.get('id'), user.get('username'), todo.get('completed'), todo.get('title')])
+            write.writerow([user.get('id'), user.get('username'),
+                           todo.get('completed'), todo.get('title')])

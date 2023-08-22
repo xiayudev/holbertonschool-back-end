@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """Module to interact with an api"""
-from sys import argv
 import requests
+import sys
 
 url = "https://jsonplaceholder.typicode.com"
 
 if __name__ == "__main__":
-    response_todos = requests.get(f"{url}/todos?userId={argv[1]}")
-    response_users = requests.get(f"{url}/users/{argv[1]}")
+    response_todos = requests.get(f"{url}/todos?userId={sys.argv[1]}")
+    response_users = requests.get(f"{url}/users/{sys.argv[1]}")
 
     todos = response_todos.json()
     user = response_users.json().get('name')

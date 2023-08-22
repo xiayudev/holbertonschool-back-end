@@ -21,6 +21,8 @@ if __name__ == "__main__":
 
     for value in get_value:
         value['username'] = user.get('username')
+        value['task'] = value['title']
+        del value['title']
 
     with open(f"{user.get('id')}.json", mode='w') as file:
         file.write(json.dumps(filter_todos))
